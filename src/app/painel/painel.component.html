@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="jumbotron">
+        <app-progresso [progresso]="cont"></app-progresso>
+        <br>
+        <form #formulario="ngForm" (ngSubmit)="salvarAluno(formulario)">
+            <div class="form-group">
+                <label for="nome">Nome: </label>
+                <input type="text" class="form-control" id="nome" name="nome" (input)="atualizaAluno($event)" placeholder="Escreva seu nome">
+
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail: </label>
+                <input type="email" class="form-control" id="email" (input)="atualizaAluno($event)" placeholder="Insira seu e-mail ( exemplo@exemplo.com )">
+
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" id="senha" (input)="atualizaAluno($event)" placeholder="Senha">
+            </div>
+            <label >Curso: </label>
+            <div class="form-check rb" (input)="atualizaAluno($event)">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="rb1" value="Engenharia de Computação">
+                <label class="form-check-label" for="exampleRadios1">
+                    Engenharia de Computação
+                </label>
+            </div>
+            
+            <div class="form-check rb" (input)="atualizaAluno($event)">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="rb2" value="Análise e Desenvolvimento de Sistemas">
+                <label class="form-check-label" for="exampleRadios2">
+                    Análise e Desenvolvimento de Sistemas
+                </label>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button type="subimt" class="btn btn-secondary" >Enviar</button>
+            </div>
+
+
+        </form>
+
+    </div>
+</div>
