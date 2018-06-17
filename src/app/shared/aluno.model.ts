@@ -8,5 +8,6 @@ export class Aluno{
         this.nome = nome;
         this.email = email;
         this.senha = senha;
+        this.curso = curso;
     }
 }

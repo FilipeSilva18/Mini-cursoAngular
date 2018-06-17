@@ -11,6 +11,7 @@ import { ProgressoComponent } from './progresso/progresso.component';
 import { PainelComponent } from './painel/painel.component';
 import { ProfessoresComponent } from './professores/professores.component';
 import { CursosComponent } from './cursos/cursos.component';
+import { TodosAlunosComponent } from './todos-alunos/todos-alunos.component';
 
 
 
@@ -22,6 +23,7 @@ import { CursosComponent } from './cursos/cursos.component';
     PainelComponent,
     ProfessoresComponent,
     CursosComponent,
+    TodosAlunosComponent,
     
   ],
   imports: [

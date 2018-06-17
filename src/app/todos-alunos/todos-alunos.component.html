@@ -1,0 +1,24 @@
+
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th class="text-center" scope="col">#</th>
+      <th class="text-center" scope="col">Nome</th>
+      <th class="text-center" scope="col">E-mail</th>
+      <th class="text-center" scope="col">Senha</th>
+      <th class="text-center" scope="col">Curso</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let aluno of alunos ; index as i; first as isFirst">
+      <th class="text-center" scope="row">{{i}}</th>
+      <td class="text-center">{{aluno.nome}}</td>
+      <td class="text-center">{{aluno.email}}</td>
+      <td class="text-center">{{aluno.senha}}</td>
+      <td class="text-center">{{aluno.curso}}</td>
+      
+    </tr>
+    
+  </tbody>
+</table>

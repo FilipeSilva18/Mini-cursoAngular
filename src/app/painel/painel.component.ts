@@ -13,41 +13,56 @@ export class PainelComponent implements OnInit {
   public aluno: Aluno;
   public alunos:Aluno[];
 
-  public contador:number = 0;
+  public contador:number;
   public cont:number;
+  
 
   constructor() {
     this.aluno = new Aluno("", "", "", "");
     this.alunos = new Array();
+    this.contador = 0
     this.cont = 0;
   }
 
   ngOnInit() {
   }
 
-  atualizaAluno(event: Event): void {
+  atualizaProgresso(event: Event): void {
     if ((<HTMLInputElement>event.target).id == "nome") {
-      this.aluno.nome = (<HTMLInputElement>event.target).value;
+     
       if(this.cont==0)this.cont=25;
     } else if ((<HTMLInputElement>event.target).id == "email") {
-      this.aluno.email = (<HTMLInputElement>event.target).value;
+      
       if(this.cont==25)this.cont=50;
     } else if ((<HTMLInputElement>event.target).id == "senha") {
-      this.aluno.senha = (<HTMLInputElement>event.target).value;
+     
       if(this.cont==50)this.cont=75;
     }else if((<HTMLInputElement>event.target).id == "rb1"){
-      this.aluno.curso = (<HTMLInputElement>event.target).value;
+     
       if(this.cont==75)this.cont=100;
     }else if((<HTMLInputElement>event.target).id == "rb2"){
-      this.aluno.curso = (<HTMLInputElement>event.target).value;
+     
       if(this.cont==75)this.cont=100;
     }
     
   }
 
   salvarAluno(Formulario: NgForm):void{
-  
-    console.log(Formulario.getControl);
+    console.log(Formulario.form.controls)  
+    console.log(Formulario.form.controls.nome.value);
+
+    this.aluno.nome = Formulario.form.controls.nome.value;
+    this.aluno.email = Formulario.form.controls.email.value;
+    this.aluno.senha = Formulario.form.controls.senha.value;
+
+    this.aluno.curso = Formulario.form.controls.rb.value;
+    let curso:string = Formulario.form.controls.rb.value;
+    
+    this.alunos[this.contador] = new Aluno(this.aluno.nome, this.aluno.email, this.aluno.senha, curso);
+    console.log(this.alunos);
+    this.contador = this.contador+1;
+
+
   }
 
 }
